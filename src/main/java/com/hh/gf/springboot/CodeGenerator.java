@@ -43,9 +43,7 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        System.err.println(projectPath+"11111111");
         gc.setOutputDir(projectPath + "/src/main/java");
-        System.err.println(projectPath + "/src/main/java   2222222222222222");
         gc.setAuthor("gaofei");
         gc.setOpen(false);
         gc.setSwagger2(true); // 实体属性 Swagger2 注解
@@ -53,7 +51,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+        dsc.setUrl("jdbc:oracle:thin:@localhost:1521:ORCL");
         // dsc.setSchemaName("public");
         dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
         dsc.setUsername("scott");
@@ -126,7 +124,7 @@ public class CodeGenerator {
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
-        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));    //oracle数据库生成实体时，要将该行代码去掉，否则生成不了文件
         strategy.setControllerMappingHyphenStyle(true);
 
 
