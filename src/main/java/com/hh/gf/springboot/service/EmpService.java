@@ -12,3 +12,4 @@ public interface EmpService  extends IService<Emp> {
      */
      boolean deleteEmp(Long empId);
 }
+ 
